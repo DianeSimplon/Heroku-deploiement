@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Jarvis Health IA</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/CSS" href="{% static 'CSS/main.css' %}">
+
+    <img src="{% static 'images/logo-simplon_23.png'%}" alt="image introuvable ">
+
+    <title>Bien Immobiliers</title>
+  </head>
+
+  <body>
+
+   
+   <div class="main-block">
+
+        <div class="container">
+      
+           <table class="results">
+            <thead>
+                {% for column in columns %}
+                <th>{{column}}</th>
+                {% endfor %}
+            </thead>
+            {% for row in data %}
+            <tr>
+                {%for value in row %}
+                <td>
+                    <div>{{value}}</div>
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+                <!--Cette baliser permet d'attirer <b>Load a csv file</b>-->
+           
+        </div>
+                
+            <div>
+
+                <!-- C'est a mettre dans data.thml-->
+                <h1>chargement de la donnée</h1>
+                <!--Architecture de la page   <hr> -->
+
+                 <!--Creer tag-->
+    {% block contenu %}
+    {% endblock %}   
+                
+            </div>
+
+    </div>
+
+<h1>Footer</h1>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends 'main.html'%}
+
+{% block contenu %}
+    
+    <!--C'est pour l'acceuil  <h1>Bienvenu sur la page du chargement du fichier csv</h1>-->
+    <form action="data" method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <input id="file_upload" type="file" name="csv_file" accept=".csv" required=True ></input>
+
+        <button>
+            <input class="submit" type="submit">
+        </button>
+    </form>
+{% endblock%}
